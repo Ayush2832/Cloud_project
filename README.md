@@ -67,35 +67,35 @@ IMAGE_ID=$(docker images -q ayush2832/web-server)
 docker run -d --name container -p 5555:3333 "$IMAGE_ID"
 ```
 
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240817142606.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240817142606.png)
 
 5. After creating the container we will go to the Network security group and we will make a new inbound rule for the port 5555, becuase our container is working on port 5555.
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818114909.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818114909.png)
 
 6. Then our container will start to run. Just type the IP address on the browser and add the port 5555 with it.
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818115301.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818115301.png)
 
 7. After that we will create a Virtual Machine scale set, where we will create two virtual machine. After that we will similarly give the inbound rule for port 5555.
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818120829.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818120829.png)
 Then our vm in Virtual Machine Scale set start to work.
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818120808.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818120808.png)
 
 8. Finally we will create a load balancer. In load balancer we need to do some configuration
 	- First we will choose the standard SKU
 	- After that we will do FrontEnd ip configuration which will give the IP address to our load balancer.
-	(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125503.png)
+	![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125503.png)
 	
 	- After that we will create a backend pool. If your SKU of load balancer is same as SKU of the VMs then you can simply connect the VMs with the backend pool.
-	(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125215.png)
+	![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125215.png)
 	
 	- After that we need to set the load balancing rule. Here we need to define that the our frontend ip port will redirect the traffic to the backend poll vm port. Here my forntend ip port is 8080 and backend port is 5555.
-        (https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125503.png)
+        ![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125503.png)
 	
 	- At last we will create a health probe and then simply make the load balancer
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125531.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818125531.png)
 
 9. Simply create the load balancer.
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818124930.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818124930.png)
 
 10. At last when you type `http://load_balancer_ip:8080`. Then it will simply show the result.
-(https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818155940.png)
+![img](https://github.com/Ayush2832/Cloud_project/blob/master/Pasted%20image%2020240818155940.png)
