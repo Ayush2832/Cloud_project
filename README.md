@@ -1,4 +1,6 @@
-### Deployed a Scalable Golang Web Application on Azure:
+# Deployed a Scalable Golang Web Application on Azure
+### This is a simple cloud project where we create a docker image of our golang web-server and then create a docker image from it. After that we simply run this image in VMSS in azure and then finally add the load balancer with it.
+### Steps of the project.
 
 1. Firt we created a simple golang web server. For that we use net/http package.
 ```go
